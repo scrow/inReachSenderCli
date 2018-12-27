@@ -35,7 +35,7 @@ def splitUpToN(text,n=150):
     parts.append(out.strip())
     return [e for e in parts if len(e) > 0]
 
-def sendMessage(addressTo,message,addressFrom='it@arctowski.pl',maxTry=100,splitOn=158,splitTo=150):
+def sendMessage(addressTo,message,addressFrom='noreply@null.com',maxTry=100,splitOn=158,splitTo=150):
     dane = {}
 
     homeDir = os.environ['HOME']
@@ -96,8 +96,10 @@ def sendMessage(addressTo,message,addressFrom='it@arctowski.pl',maxTry=100,split
                 print 'Giving up, sorry'
 
 try:
+    ardFr = raw_input('From:')
     ardTo = raw_input('To:  ')
     msg   = raw_input('Msg: ')
-    sendMessage(ardTo,msg)
+    sendMessage(ardTo,msg,ardFr)
 except KeyboardInterrupt as e:
     print '\n\nExiting.'
+
