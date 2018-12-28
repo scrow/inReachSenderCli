@@ -38,7 +38,8 @@ def splitUpToN(text,n=150):
 def sendMessage(addressTo,message,addressFrom='noreply@null.com',maxTry=100,splitOn=158,splitTo=150):
     dane = {}
 
-    homeDir = os.environ['HOME']
+#    homeDir = os.environ['HOME']
+    homeDir = '/tmp/'
     adrToGuid = {}
 
     try:
